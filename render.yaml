@@ -1,0 +1,11 @@
+﻿services:
+  - type: web
+    name: ampe-sync-vs-switch
+    runtime: python
+    region: ohio
+    plan: free
+    buildCommand: python -m py_compile server.py
+    startCommand: python server.py
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+
